@@ -1,5 +1,5 @@
 """
-Problem : Write a program using multiprocessing.Pool to calculate the sum of all even numbers from 1 to N for every number from the given list.
+Problem : Write a program that counts how many even numbers exist between 1 and N using Pool.map().
 """
 
 import multiprocessing
@@ -8,26 +8,26 @@ import os
 
 """
 ----------------------------------------------------------------------------
-Function Name   :   SumEven
+Function Name   :   CountEven
 Parameters      :   Number
-Description     :   Accepts a number and calculate the sum of all even numbers from 1 to N.
+Description     :   Accepts a number and counts all even numbers from 1 to N.
 Author          :   Shraddha Dhananjay Mutange
 Date            :   12/07/2026
 ----------------------------------------------------------------------------
 """
 
-def SumEven(No):
+def CountEven(No):
     
-    sum = 0
+    Count = 0
 
     for i in range(2, No+1, 2):
-        sum = sum + i
+        Count = Count + 1
 
     print(f"\nInside Process with ID : {os.getpid()}")
     print(f"Input number is : {No}")
-    print(f"Sum of Even numbers : {sum}")
+    print(f"Even number count : {Count}")
 
-    return sum
+    return Count
 
 """
 ----------------------------------------------------------------------------
@@ -43,7 +43,7 @@ def main():
 
     pobj = multiprocessing.Pool()
 
-    Result = pobj.map(SumEven,Data)
+    Result = pobj.map(CountEven,Data)
 
     pobj.close()
     pobj.join()
@@ -64,25 +64,25 @@ if __name__ == "__main__":
 -----------------------------Output-------------------------------
 ------------------------------------------------------------------
 
-Inside Process with ID : 13053
+Inside Process with ID : 14555
 Input number is : 10
-Sum of Even numbers : 30
+Odd number count : 5
 
-Inside Process with ID : 13054
+Inside Process with ID : 14556
 Input number is : 200000
-Sum of Even numbers : 10000100000
+Odd number count : 100000
 
-Inside Process with ID : 13055
+Inside Process with ID : 14557
 Input number is : 300000
-Sum of Even numbers : 22500150000
+Odd number count : 150000
 
-Inside Process with ID : 13056
+Inside Process with ID : 14558
 Input number is : 400000
-Sum of Even numbers : 40000200000
+Odd number count : 200000
 
-The result is :  [30, 10000100000, 22500150000, 40000200000]
+The result is :  [5, 100000, 150000, 200000]
 
-Time required is : 0.0263 seconds
+Time required is : 0.0261 seconds
 
 ------------------------------------------------------------------
 """

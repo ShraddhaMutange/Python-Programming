@@ -1,5 +1,5 @@
 """
-Problem : Write a program using multiprocessing.Pool to calculate the sum of all even numbers from 1 to N for every number from the given list.
+Problem : Write a program that calculates factorials of multiple numbers simultaneously using multiprocessing.pool.
 """
 
 import multiprocessing
@@ -8,26 +8,26 @@ import os
 
 """
 ----------------------------------------------------------------------------
-Function Name   :   SumEven
+Function Name   :   Factorial
 Parameters      :   Number
-Description     :   Accepts a number and calculate the sum of all even numbers from 1 to N.
+Description     :   Accepts a number and calculates its factorials.
 Author          :   Shraddha Dhananjay Mutange
 Date            :   12/07/2026
 ----------------------------------------------------------------------------
 """
 
-def SumEven(No):
+def Factorial(No):
+    Fact = 1
     
-    sum = 0
-
-    for i in range(2, No+1, 2):
-        sum = sum + i
+    for i in range(1,No+1):
+        Fact = Fact * i
 
     print(f"\nInside Process with ID : {os.getpid()}")
-    print(f"Input number is : {No}")
-    print(f"Sum of Even numbers : {sum}")
+    print(f"Input number : {No}")
+    print(f"Factorial : {Fact}")
 
-    return sum
+    return Fact
+
 
 """
 ----------------------------------------------------------------------------
@@ -36,14 +36,14 @@ def SumEven(No):
 """
 
 def main():
-    Data = [10,200000,300000,400000]
+    Data = [10,15,20,25]
     Result = list()
 
     start_time = time.perf_counter()
 
     pobj = multiprocessing.Pool()
 
-    Result = pobj.map(SumEven,Data)
+    Result = pobj.map(Factorial,Data)
 
     pobj.close()
     pobj.join()
@@ -64,25 +64,25 @@ if __name__ == "__main__":
 -----------------------------Output-------------------------------
 ------------------------------------------------------------------
 
-Inside Process with ID : 13053
-Input number is : 10
-Sum of Even numbers : 30
+Inside Process with ID : 18950
+Input number : 10
+Factorial : 3628800
 
-Inside Process with ID : 13054
-Input number is : 200000
-Sum of Even numbers : 10000100000
+Inside Process with ID : 18951
+Input number : 15
+Factorial : 1307674368000
 
-Inside Process with ID : 13055
-Input number is : 300000
-Sum of Even numbers : 22500150000
+Inside Process with ID : 18952
+Input number : 20
+Factorial : 2432902008176640000
 
-Inside Process with ID : 13056
-Input number is : 400000
-Sum of Even numbers : 40000200000
+Inside Process with ID : 18953
+Input number : 25
+Factorial : 15511210043330985984000000
 
-The result is :  [30, 10000100000, 22500150000, 40000200000]
+The result is :  [3628800, 1307674368000, 2432902008176640000, 15511210043330985984000000]
 
-Time required is : 0.0263 seconds
+Time required is : 0.0223 seconds
 
 ------------------------------------------------------------------
 """
