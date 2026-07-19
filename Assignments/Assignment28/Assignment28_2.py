@@ -1,7 +1,7 @@
 """
 --------------------------------------------------------------------------------
-Problem     : Count lines in a file
-Description : Write a program which accepts file name from the user and counts how many lines are present in the file. 
+Problem     : Count words in a file
+Description : Write a program which accepts file name from the user and counts how many words are present in the file. 
 Author      : Shraddha Dhananjay Mutange
 Date        : 19/07/2026
 --------------------------------------------------------------------------------
@@ -14,12 +14,13 @@ def main():
             
         fobj = open(fname, 'r')
 
-        lcount = 0
+        count = 0
 
         for line in fobj:
-            lcount = lcount + 1
+            words = line.split()
+            count = count + len(words)
         
-        print("Total number of lines : ", lcount)
+        print("Total number of words : ", count)
 
         fobj.close()
 
@@ -43,12 +44,7 @@ Error occured :  [Errno 2] No such file or directory: 'Demo'
 --------------------------------------------------------------------------------
 
 Enter file name : DemoFile.txt
-Total number of lines :  4
-
---------------------------------------------------------------------------------
-
-Enter file name : Assignment28_1.py
-Total number of lines :  32
+Total number of words :  10
 
 --------------------------------------------------------------------------------
 """

@@ -1,7 +1,7 @@
 """
 --------------------------------------------------------------------------------
-Problem     : Count lines in a file
-Description : Write a program which accepts file name from the user and counts how many lines are present in the file. 
+Problem     : Display file line by line
+Description : Write a program which accepts file name from the user and displays the contents of the file line by line on the screen.
 Author      : Shraddha Dhananjay Mutange
 Date        : 19/07/2026
 --------------------------------------------------------------------------------
@@ -14,12 +14,10 @@ def main():
             
         fobj = open(fname, 'r')
 
-        lcount = 0
-
+        print("File Content :")
         for line in fobj:
-            lcount = lcount + 1
+            print(f"\t{line}")
         
-        print("Total number of lines : ", lcount)
 
         fobj.close()
 
@@ -43,12 +41,14 @@ Error occured :  [Errno 2] No such file or directory: 'Demo'
 --------------------------------------------------------------------------------
 
 Enter file name : DemoFile.txt
-Total number of lines :  4
+File Content :
+	Jay Ganesh...
 
---------------------------------------------------------------------------------
+	Marvellous Infosystems
 
-Enter file name : Assignment28_1.py
-Total number of lines :  32
+	Shraddha Mutange
+
+	India is my country
 
 --------------------------------------------------------------------------------
 """

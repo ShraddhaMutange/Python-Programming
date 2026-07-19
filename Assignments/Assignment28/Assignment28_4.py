@@ -1,27 +1,30 @@
 """
 --------------------------------------------------------------------------------
-Problem     : Count lines in a file
-Description : Write a program which accepts file name from the user and counts how many lines are present in the file. 
+Problem     :   Copy file contents into another file
+Description :   Write a program which accepts two file names from the user.
+                - First file is an existing file
+                - Second file is a new file
+                Copy all contents from the first file into the second file.
 Author      : Shraddha Dhananjay Mutange
 Date        : 19/07/2026
 --------------------------------------------------------------------------------
 """
 
 def main():
-    fname = input("Enter file name : ")
+    sfname = input("Enter source file name : ")
+    dfname = input("Enter destination file name : ")
+
 
     try:
             
-        fobj = open(fname, 'r')
+        sfobj = open(sfname, 'r')
+        dfobj = open(dfname, 'w')
 
-        lcount = 0
+        for line in sfobj:
+            dfobj.write(line)
 
-        for line in fobj:
-            lcount = lcount + 1
-        
-        print("Total number of lines : ", lcount)
+        print(f"File content of {sfname} copied successfully into {dfname} file.")
 
-        fobj.close()
 
     except FileNotFoundError as eobj:
         print("Error occured : ", eobj)
@@ -37,18 +40,9 @@ if (__name__ == "__main__"):
 -----------------------------------Output---------------------------------------
 --------------------------------------------------------------------------------
 
-Enter file name : Demo  
-Error occured :  [Errno 2] No such file or directory: 'Demo'
-
---------------------------------------------------------------------------------
-
-Enter file name : DemoFile.txt
-Total number of lines :  4
-
---------------------------------------------------------------------------------
-
-Enter file name : Assignment28_1.py
-Total number of lines :  32
+Enter source file name : DemoFile.txt
+Enter destination file name : DestinationFile.txt
+File content of DemoFile.txt copied successfully into DestinationFile.txt file.
 
 --------------------------------------------------------------------------------
 """
