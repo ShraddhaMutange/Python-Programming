@@ -1,8 +1,8 @@
 """
 --------------------------------------------------------------------------------
-Problem     :   Write a program that schedules a function to print:
-                Coding Kar... 
-                every 30 minutes
+Problem     :   Schedule a task taht executes every five minutes.
+                The task should write the current date and time into a file named: Marvellous.txt
+                New entries should be appended without removing previous entries.
 Author      :   Shraddha Dhananjay Mutange
 Date        :   25/07/2026
 --------------------------------------------------------------------------------
@@ -12,16 +12,21 @@ import schedule
 import time
 
 def Display():
-    print(f"Coding Kar... - {datetime.datetime.now()}")
+    fobj = open("Marvellous.txt", 'a')
+
+    curr_datetime = str(datetime.datetime.now())
+
+    fobj.write(f"Task executed at : {curr_datetime}\n")
+
 
 def main():
     print("Automation script started")
 
-    schedule.every(30).minutes.do(Display)
+    schedule.every(5).minutes.do(Display)
 
     while(True):
         schedule.run_pending()
-        time.sleep(2)
+        time.sleep(5)
 
 
 

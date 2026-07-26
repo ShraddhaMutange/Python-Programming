@@ -32,22 +32,17 @@ if (__name__ == "__main__"):
 --------------------------------------------------------------------------------
 
 Automation script started
-Jay Ganesh...
-Jay Ganesh...
-Jay Ganesh...
-Jay Ganesh...
-Jay Ganesh...
+Current date and time : 2026-07-26 13:19:24.046207
+Current date and time : 2026-07-26 13:20:24.052812
+Current date and time : 2026-07-26 13:21:24.061696
+Current date and time : 2026-07-26 13:22:24.068978
 ^CTraceback (most recent call last):
-  File "/home/shraddha/Desktop/Python/Assignments/Assignment30/Assignment30_1.py", line 27, in <module>
+  File "/home/shraddha/Desktop/Python/Assignments/Assignment30/Assignment30_2.py", line 27, in <module>
     main()
-  File "/home/shraddha/Desktop/Python/Assignments/Assignment30/Assignment30_1.py", line 22, in main
-    schedule.run_pending()
-  File "/usr/local/lib/python3.12/dist-packages/schedule/__init__.py", line 854, in run_pending
-    default_scheduler.run_pending()
-  File "/usr/local/lib/python3.12/dist-packages/schedule/__init__.py", line 100, in run_pending
-    for job in sorted(runnable_jobs):
-               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shraddha/Desktop/Python/Assignments/Assignment30/Assignment30_2.py", line 22, in main
+    time.sleep(2)
 KeyboardInterrupt
+
 
 --------------------------------------------------------------------------------
 """

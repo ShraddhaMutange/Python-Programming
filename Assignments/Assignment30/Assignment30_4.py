@@ -1,8 +1,8 @@
 """
 --------------------------------------------------------------------------------
-Problem     :   Write a program that schedules a function to print:
-                Coding Kar... 
-                every 30 minutes
+Problem     :   Create a task that executes everyday at 9.00 AM and prints: 
+                Namaskar...
+                use : schedule.every().day.at("09.00").do(...)
 Author      :   Shraddha Dhananjay Mutange
 Date        :   25/07/2026
 --------------------------------------------------------------------------------
@@ -12,12 +12,12 @@ import schedule
 import time
 
 def Display():
-    print(f"Coding Kar... - {datetime.datetime.now()}")
+    print("Namaskar...", datetime.datetime.now())
 
 def main():
     print("Automation script started")
 
-    schedule.every(30).minutes.do(Display)
+    schedule.every().day.at("09:00").do(Display)
 
     while(True):
         schedule.run_pending()
