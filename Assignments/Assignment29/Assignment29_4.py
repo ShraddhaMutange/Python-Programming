@@ -1,46 +1,58 @@
 """
 --------------------------------------------------------------------------------
-Problem     :   Copy File Contents into a New file (Command line)
-Description :   Write a program which accepts an existing file name through command line arguments, creates a new file named Demo.txt, and copies all contents from the given file into Demo.txt.
+Problem     :   Compare two files (Command line)
+Description :   Write a program which accepts two file names through command line arguments and compares the content of both files.
+                - If both files contain the same contents, display Success
+                - Otherwise fisplay Failure
 Author      :   Shraddha Dhananjay Mutange
 Date        :   20/07/2026
 --------------------------------------------------------------------------------
 """
 import os
 import sys
+import hashlib
 
-def CopyFileContent(SrcFileName, DestFileName="DemoDest.txt"):
+def CalculateChecksum(FileName):
+    if (os.path.exists(FileName) == False):
+        print(f"{FileName} file does not exist in given path.")
+        return    
     
-    if (os.path.exists(SrcFileName) == False):
-        print("This file does not exist in given path.")
-        return
-    
-    src_fobj = open(SrcFileName, 'r')
-    dest_fobj = open(DestFileName, 'w')
+    hobj = hashlib.md5()
 
-    Buffer = src_fobj.read(1024)
+    fobj = open(FileName, 'rb')
+
+    Buffer = fobj.read(1024)
 
     while(len(Buffer) > 0):
-        dest_fobj.write(Buffer)
-        Buffer = src_fobj.read(1024)
+        hobj.update(Buffer)
+        Buffer = fobj.read(1024)
 
-    print(f"Succesfully copied contents fron {SrcFileName} into {DestFileName}")
+    fobj.close()
 
-    src_fobj.close()
-    dest_fobj.close()
+    return hobj.hexdigest()
+
+def CompareFiles(fname1, fname2):
+    file1_checksum = CalculateChecksum(fname1)
+    file2_checksum = CalculateChecksum(fname2)
+
+    return file1_checksum == file2_checksum 
 
 
 def main():
     # sys.argv[0] is the script name. sys.argv[1] is the source file.
     # Total arguments needed is 2.
     
-    if (len(sys.argv) == 2 or len(sys.argv) == 3):
-        CopyFileContent(sys.argv[1])
-    else:
-        print("InvalidCommandError : Pass command line arguments such as : FileName, SourceFileName DestinationFileName")
+    if (len(sys.argv) == 3):
+        Ret = CompareFiles(sys.argv[1], sys.argv[2])
 
-   
-        
+        if (Ret == True):
+            print("SUCCESS")
+        else:
+            print("FAILURE")
+
+    else:
+        print("InvalidCommandError : Pass command line arguments such as : FileName.py, FileName1 FileName2")
+
 
 if (__name__ == "__main__"):
     main()
@@ -50,12 +62,24 @@ if (__name__ == "__main__"):
 -----------------------------------Output---------------------------------------
 --------------------------------------------------------------------------------
 
-Succesfully copied contents fron Demo.txt into DemoDest.txt
+$ python3 Assignment29_4.py
+InvalidCommandError : Pass command line arguments such as : FileName.py, FileName1 FileName2
 
 --------------------------------------------------------------------------------
 
-InvalidCommandError : Pass command line arguments such as : FileName, SourceFileName DestinationFileName
+$ python3 Assignment29_4.py Demo.txt DemoCopy.txt
+DemoCopy.txt file does not exist in given path.
+FAILURE
 
+--------------------------------------------------------------------------------
+
+$ python3 Assignment29_4.py Demo.txt DemoDest.txt
+SUCCESS
+
+--------------------------------------------------------------------------------
+
+$ python3 Assignment29_4.py Demo.txt Assignment29_2.py
+FAILURE
 
 --------------------------------------------------------------------------------
 """
