@@ -2,13 +2,13 @@ India is my country.
 Shraddha Mutange
 Jay Ganesh
 This is a text file.
-India is my country, and all Indians are my brothers and sisters. I love my country, and I am proud of its rich and varied heritage. I shall always strive to be worthy of it. I shall give my parents, teachers and all elders respect, and treat everyone with courtesy. To my country and my people, I pledge my devotion. In their well-being and prosperity alone lies my happiness.
+country.
+Shraddha Mutange
+Jay Ganesh
+country.
+Shraddha Mutange
+Jay Ganesh
+country.
+Shraddha Mutange
+Jay Ganesh
 
-Technology drives the modern era forward at an unprecedented pace, changing how we interact, work, and solve problems daily. Writing clean, efficient, and robust code is an essential skill for any software engineer. It requires deep logical thinking, consistent practice, and an elegant structural design. When working with text manipulation and file processing, handling buffers efficiently ensures that computer systems do not run out of random-access memory, even when processing massive databases or giant multimedia files. 
-
-
-country, and I am proud of its rich and varied heritage. I shall always strive to be worthy of it. I shall give my parents, teachers and all elders respect, and treat everyone with courtesy. To my country and my people, I pledge my devotion. In their well-being and prosperity alone lies my happiness.
-
-Technology drives the modern era forward at an unprecedented pace, changing how we interact, work, and solve problems daily. Writing clean, efficient, and robust code is an essential skill for any software engineer. It requires deep logical thinking, consistent practice, and an elegant structural design. When working with text manipulation and file processing, handling buffers efficiently ensures that computer systems do not run out of random-access memory, even when processing massive databases or giant multimedia files. 
-
-Learning step-by-step, understanding core programming logic like conditional loops, file streams, exceptions, and command-line execution arguments builds a rock-solid foundation for advanced engine
