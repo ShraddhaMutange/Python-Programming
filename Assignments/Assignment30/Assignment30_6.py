@@ -3,7 +3,7 @@
 Problem     :   Write a script that schedules the following tasks:
                 - Print Lunch Time! every day at 1:00 PM
                 - Print "Wrap up work" every day at 6:00 PM.
-                Both taska should be handled by separate functions.
+                Both tasks should be handled by separate functions.
 Author      :   Shraddha Dhananjay Mutange
 Date        :   25/07/2026
 --------------------------------------------------------------------------------

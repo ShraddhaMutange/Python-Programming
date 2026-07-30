@@ -1,9 +1,7 @@
 """
 --------------------------------------------------------------------------------
-Problem     :   Write a script that schedules the following tasks:
-                - Print Lunch Time! every day at 1:00 PM
-                - Print "Wrap up work" every day at 6:00 PM.
-                Both taska should be handled by separate functions.
+Problem     :   Write a script that performs a file backup every hour.
+                
 Author      :   Shraddha Dhananjay Mutange
 Date        :   25/07/2026
 --------------------------------------------------------------------------------
