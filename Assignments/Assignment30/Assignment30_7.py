@@ -18,6 +18,7 @@ import sys
 import os
 import time
 import datetime
+import schedule
 
 def Backup(src_path, dest_dir):
     Border = "-"*50
@@ -60,16 +61,22 @@ def main():
     try:
         print("Automation script started")
 
-        Backup(sys.argv[1], sys.argv[2])
+        # schedule.every(1).hour.do(Backup, srv_path = sys.argv[1], dest_dir = sys.argv[2])
+
+        schedule.every(1).hour.do(Backup, sys.argv[1], sys.argv[2])
+
+        # Backup(sys.argv[1], sys.argv[2])
+
+        while(True):
+            schedule.run_pending()
+            time.sleep(2)
+            
 
     except IndexError as eobj:
         print("Error occured : ", eobj)
         
     except Exception as eobj:
         print("Error occured : ", eobj)
-
-
-
 
 
 

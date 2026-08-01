@@ -1,0 +1,10 @@
+
+Directory Path : /home/shraddha/Desktop/Python/Assignments/Assignment31
+Directory Name : /home/shraddha/Desktop/Python/Assignments/Assignment31
+Number of files : 6
+Date and time : 01-08-2026 11:51:26 AM
+
+Directory Path : /home/shraddha/Desktop/Python/Assignments/Assignment31
+Directory Name : /home/shraddha/Desktop/Python/Assignments/Assignment31/DestDir
+Number of files : 12
+Date and time : 01-08-2026 11:51:26 AM
